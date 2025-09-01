@@ -1,19 +1,33 @@
+body {
+    cursor: url("../assets/cursor/yugicursor.png"), default;
+    margin: 0;
+    padding: 0;
+}
+
+button,
+a,
+img:hover,
+button:hover,
+a:hover {
+    cursor: url("../assets/cursor/yamiyugicursorGLOW.png"), auto;
+}
+
 .bg-video {
     position: absolute;
     z-index: -2;
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: 100%;
     overflow: hidden;
     display: flex;
     justify-content: center;
 }
 
-.bg-video .bg-video {
-    height: 100vh;
+.bg-video video {
+    height: 100%;
 }
 
 .bg-video::after {
-    content: "";
+    content: " ";
     position: absolute;
     top: 0;
     left: 0;
@@ -28,107 +42,188 @@
 .container {
     position: relative;
     z-index: 3;
-    display: flex;
     height: 100vh;
+    display: flex;
 }
 
-.container_left {
+.container__left {
     width: 35%;
     min-width: 300px;
+    display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
+    padding: 1rem;
 }
 
-.container__right
-{
+.container__right {
     width: 65%;
-
+    padding: 1rem;
 }
 
 .score_box {
-    background-color: white;
-    padding: 30px;
+    background-color: #fff;
+    padding: 20px;
+    text-align: center;
 }
 
 .frame {
     border: 3px solid #000;
-    border-radius: 5px;
+    border-radius: 10px;
 }
 
-.card_details
-{
-    background-color: white;
+.card_details {
+    background-color: #fff;
     padding: 1rem;
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    height: 6rem;
+    flex-direction: column;
+    height: auto;
     width: 100%;
 }
 
-#card-name
-{
+#card-name {
     font-size: 0.8rem;
+    text-align: center;
 }
 
-#card-type
-{
+#card-type {
     font-size: 1rem;
+    text-align: center;
 }
 
-.card-box__container
-{
-    height: 100vh;
+.cardbox__container {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    padding: 0.3rem;
-
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
 }
 
-.card-versus_container
-{
-
+.card-versus__container {
     display: flex;
-    flex-direction: column;
-    padding-top: 0.1rem;
+    flex-direction: row;
     height: 300px;
-    margin-top: 5rem;
-
+    justify-content: center;
+    align-items: center;
+    margin: 4rem 0;
 }
 
-.versus-top,.versus-bottom
-{
+.versus-top,
+.versus-bottom {
     display: flex;
     align-items: center;
     justify-content: center;
 }
-.versus-bottom
-{
+
+.versus-bottom {
     margin-top: 1rem;
 }
 
-#next-duel
-{
-    display: none;
+.versus-result {
+    margin-top: 1.5rem;
+    display: flex;
+    justify-content: center;
 }
 
-.card-box
-{
-    height: 9rem;
+#next {
+    display: none;
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+    border-radius: 8px;
+}
+
+.card-box {
+    height: auto;
+    min-height: 8rem;
     width: 100%;
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     align-items: center;
-    justify-content: space-around;
+    justify-content: center;
+    gap: 0.5rem;
 }
 
-.card-infield
-{
+.card-infield {
     height: 11.2rem;
     width: 8rem;
-    border: 1px solid white;
+    border: 1px solid #fff;
     border-radius: 8px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card {
+    transition: transform 0.2s;
+    max-width: 100px;
+}
+
+.card:hover {
+    transform: scale(1.2);
+}
+
+@media (max-width: 1024px) {
+    .container {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .container__left,
+    .container__right {
+        width: 100%;
+        min-width: unset;
+    }
+
+    .cardbox__container {
+        padding: 1rem;
+    }
+
+    .card-versus__container {
+        flex-direction: column;
+        height: auto;
+        margin: 2rem 0;
+    }
+
+    .versus-top,
+    .versus-bottom {
+        flex-direction: column;
+    }
+
+    .card-infield {
+        margin-bottom: 1rem;
+    }
+}
+
+@media (max-width: 600px) {
+    #card-name {
+        font-size: 0.7rem;
+    }
+
+    #card-type {
+        font-size: 0.8rem;
+    }
+
+    .score_box {
+        font-size: 0.9rem;
+        padding: 10px;
+    }
+
+    .card {
+        max-width: 80px;
+    }
+
+    .card-infield {
+        height: 9rem;
+        width: 6rem;
+    }
+
+    #next {
+        font-size: 0.9rem;
+        padding: 0.6rem 1rem;
+    }
 }
