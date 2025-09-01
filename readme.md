@@ -42,11 +42,14 @@ A proposta foi transformar o clássico **Jo-Ken-Pô (Pedra, Papel e Tesoura)** e
 ---
 
 ## ▶️ Como jogar
-1. Clique no botão verde **Code** neste repositório.  
-2. Escolha a opção **Download ZIP** e extraia em seu computador.  
-3. Abra a pasta extraída.  
-4. Dê **duplo clique em `index.html`** para rodar o jogo no navegador.  
 
+Para que o jogo funcione corretamente, é necessário rodar o projeto em um **servidor local**, pois o navegador bloqueia algumas operações de arquivos locais e reprodução de áudio.
+
+### Opção 1 – Usando Live Server no VS Code
+1. Baixe ou clone o repositório.
+2. Abra a pasta do projeto no **VS Code**.
+3. Clique com o botão direito em `index.html` e selecione **Open with Live Server**.
+4. O jogo será aberto no navegador e funcionará normalmente.
 ---
 
 ## 👨‍💻 Autor
